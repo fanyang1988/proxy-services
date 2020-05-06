@@ -5,6 +5,7 @@ import (
 
 	"github.com/cihub/seelog"
 	"github.com/fanyang1988/proxy-services/config"
+	"github.com/fanyang1988/proxy-services/winproxy"
 )
 
 var (
@@ -18,15 +19,19 @@ func main() {
 
 	cfg := config.LoadCfg(*cfgPath)
 	pacURL := cfg.URL
-	if pacURL != "" {
+	if pacURL == "" {
 		pacURL = *url
 	}
 
-	startPacServer(pacURL)
-}
+	ip := cfg.IP
+	if ip == "" {
+		var err error
+		ip, err = winproxy.GetIP()
+		if err != nil {
+			seelog.Errorf("get ip error, cfg is nil by %s", err.Error())
+			return
+		}
+	}
 
-func startPacServer(url string) error {
-	seelog.Infof("start pac server by %s", url)
-
-	return nil
+	startPacServer(pacURL, ip)
 }
