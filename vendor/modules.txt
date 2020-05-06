@@ -8,6 +8,9 @@ github.com/cihub/seelog/archive/zip
 # github.com/fanyang1988/go-get-proxied v0.0.0-20181210221417-16249a544090
 ## explicit
 github.com/fanyang1988/go-get-proxied/winhttp
+# github.com/pkg/errors v0.9.1
+## explicit
+github.com/pkg/errors
 # github.com/stretchr/testify v1.5.1
 ## explicit
 # golang.org/x/sys v0.0.0-20200501145240-bc7a7d42d5c3
