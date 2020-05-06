@@ -8,6 +8,7 @@ import (
 // Config cfg for cmd
 type Config struct {
 	URL string `json:"url"`
+	IP  string `json:"ip"`
 }
 
 // LoadCfg load cfg from file
