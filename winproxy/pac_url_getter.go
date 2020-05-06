@@ -45,7 +45,5 @@ func GetWinPACUrl() (string, error) {
 		return "", err
 	}
 
-	seelog.Infof("res ie cfg %v", res)
-
 	return winhttp.LpwstrToString(res.LpszAutoConfigUrl), nil
 }

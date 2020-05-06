@@ -9,6 +9,6 @@ func TestGetPAC(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	t.Logf("pac:")
-	t.Logf("%s", string(data))
+	t.Logf("pac: len %d", len(data))
+	//t.Logf("%s", string(data))
 }

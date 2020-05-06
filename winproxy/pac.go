@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/cihub/seelog"
 	"github.com/pkg/errors"
 )
 
@@ -13,6 +14,8 @@ func GetPAC() ([]byte, error) {
 	if err != nil {
 		return []byte{}, errors.Wrap(err, "get pac url error")
 	}
+
+	seelog.Infof("pac url %s", url)
 
 	resp, err := http.Get(url)
 	if err != nil {
